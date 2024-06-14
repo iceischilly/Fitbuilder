@@ -13,6 +13,8 @@ public class Code {
         });
     }
 
+// MENU
+
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Fit Builder 9000");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,7 +63,7 @@ public class Code {
         buildFrame.setLayout(new BorderLayout());
         buildFrame.setLayout(new GridLayout(6, 6));
        
-        // Example image paths, replace with actual paths
+        // Where images go
         String[] imagePaths = {"assest/New Project.png", "path_to_image2.jpg", "path_to_image3.jpg","assest/New Project.png","assest/New Project.png"};
        
         JButton[] imageButtons = new JButton[imagePaths.length];
@@ -71,8 +73,8 @@ public class Code {
             imageButtons[i].addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     // Your logic to handle image clicks and check for match
-                    JButton clickedButton = (JButton) e.getSource();
-                    handleImageClick(clickedButton, frame);
+                    JButton clickedbuildButton = (JButton) e.getSource();
+                    hatBuild(clickedbuildButton, frame);
                 }
             });
             buildFrame.add(imageButtons[i]);
@@ -88,7 +90,7 @@ public class Code {
         editFrame.setSize(500, 500);
         editFrame.setLayout(new GridLayout(2, 3));
        
-        // Example image paths, replace with actual paths
+        // Where images go
         String[] imagePaths = {"assest/New Project.png", "path_to_image2.jpg", "path_to_image3.jpg"};
        
         JButton[] imageButtons = new JButton[imagePaths.length];
@@ -98,8 +100,8 @@ public class Code {
             imageButtons[i].addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     // Your logic to handle image clicks and check for match
-                    JButton clickedButton = (JButton) e.getSource();
-                    handleImageClick(clickedButton, frame);
+                    JButton clickededitButton = (JButton) e.getSource();
+                    editBuild(clickededitButton, frame);
                 }
             });
             editFrame.add(imageButtons[i]);
@@ -108,12 +110,28 @@ public class Code {
         editFrame.setVisible(true);
     }
 
-    private static void handleImageClick(JButton clickedButton, JFrame frame) {
-        // Implement logic to check if selected images are a good match
-        // This is a placeholder for demonstration purposes
-        JOptionPane.showMessageDialog(frame, "Image clicked: " + clickedButton.getIcon().toString());
+    private static void hatBuild(JButton clickedbuildButton, JFrame frame) {
+        JFrame hatFrame = new JFrame("Hat Menu");
+        hatFrame.setSize(500, 500);
+        hatFrame.setLayout(new GridLayout(2, 3));
+       
+        // Example image paths, replace with actual paths
+        String[] imagePaths = {"assest/New Project.png", "path_to_image2.jpg", "path_to_image3.jpg"};
+             
+        JButton[] imageButtons = new JButton[imagePaths.length];
+        for (int i = 0; i < imagePaths.length; i++) {
+            ImageIcon icon = new ImageIcon(imagePaths[i]);
+            imageButtons[i] = new JButton(icon);
+            imageButtons[i].addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    // Your logic to handle image clicks and check for match
+                    JButton clickededitButton = (JButton) e.getSource();
+                    hatBuild(clickededitButton, frame);
+                }
+            });
+            hatFrame.add(imageButtons[i]);
+        }
 
-        // Example logic: compare clickedButton's icon to some predefined rules
-        // if (clickedButton.getIcon().toString().equals("path_to_image1.jpg")) { ... }
+        hatFrame.setVisible(true);
     }
 }
