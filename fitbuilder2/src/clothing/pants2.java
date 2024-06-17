@@ -1,6 +1,6 @@
 package fitbuilder2.src.clothing;
 public class pants2 {
-        String hat1name = "apnts2";
-        String hat1color = "grey";
-        String hat1image = "src/images/pants2.png";
+        String pants2name = "apnts2";
+        String pants2color = "grey";
+        String pants2image = "fitbuilder2\\src\\images\\pants2.png";
 }
